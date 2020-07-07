@@ -1,0 +1,98 @@
+@page
+@model PhoneApp.Pages.Events.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>All events associated with calls</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<form asp-page="./Index" method="GET">
+    <div class="form-actions no-color">
+        <p>
+            Find by caller or receiver:
+            <input type="text" name="SearchString" value="@Model.CurrentFilter" />
+            <input type="submit" value="Search" class="btn btn-primary" />
+        </p>
+        <a asp-page="./Index">Back to full list</a>
+    </div>
+</form>
+
+<form method="post" asp-page-handler="ExportExcel">
+    <button class="btn btn-sm btn-secondary order-button">Export to CSV</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.CallerSort"
+                asp-route-currentFilter="@Model.CurrentFilter">
+                @Html.DisplayNameFor(model => model.Event[0].Call.Caller)
+                </a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event[0].EventType.EventName)
+            </th>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.ReceiverSort"
+                asp-route-currentFilter="@Model.CurrentFilter">
+                @Html.DisplayNameFor(model => model.Event[0].Call.Receiver)
+                </a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event[0].RecordDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Event) {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Call.Caller)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventType.EventName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Call.Receiver)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecordDate)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.EventID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.EventID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.EventID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@{
+    var prevDisabled = !Model.Event.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.Event.HasNextPage ? "disabled" : "";
+}
+
+<a 
+asp-page="./Index"
+asp-route-sortOrder="@Model.CurrentSort"
+asp-route-pageIndex="@(Model.Event.PageIndex - 1)"
+asp-route-currentFilter="@Model.CurrentFilter"
+class="btn btn-primary @prevDisabled">
+    Previous
+</a>
+<a
+asp-page="./Index"
+asp-route-sortOrder="@Model.CurrentSort"
+asp-route-pageIndex="@(Model.Event.PageIndex + 1)"
+asp-route-currentFilter="@Model.CurrentFilter"
+class="btn btn-primary @nextDisabled">
+    Next
+</a>

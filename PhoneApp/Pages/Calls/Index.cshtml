@@ -1,0 +1,42 @@
+@page
+@model PhoneApp.Pages.Calls.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Call[0].Caller)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Call[0].Receiver)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Call) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Caller)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Receiver)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CallID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CallID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CallID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

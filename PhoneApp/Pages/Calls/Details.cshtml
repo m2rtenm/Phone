@@ -1,0 +1,56 @@
+@page
+@model PhoneApp.Pages.Calls.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+
+<div>
+    <h4>Call: @ViewData["CallType"]</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Call.Caller)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Call.Caller)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Call.Receiver)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Call.Receiver)
+        </dd>
+        <!--eksperiment siit alates -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Call.Events)
+        </dt>
+        <dd class="col-sm-10">
+            <table class="table">
+                <tr>
+                    <th>Event Name</th>
+                    <th>Record Date</th>
+                </tr>
+                @foreach (var item in Model.Call.Events)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EventType.EventName);
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RecordDate);
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Call.CallID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
