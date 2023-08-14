@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marte\\Desktop\\Phone\\PhoneApp\\PhoneApp.csproj": {}
+    "C:\\Users\\marte\\source\\repos\\m2rtenm\\Phone\\PhoneApp\\PhoneApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marte\\Desktop\\Phone\\PhoneApp\\PhoneApp.csproj": {
+    "C:\\Users\\marte\\source\\repos\\m2rtenm\\Phone\\PhoneApp\\PhoneApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marte\\Desktop\\Phone\\PhoneApp\\PhoneApp.csproj",
+        "projectUniqueName": "C:\\Users\\marte\\source\\repos\\m2rtenm\\Phone\\PhoneApp\\PhoneApp.csproj",
         "projectName": "PhoneApp",
-        "projectPath": "C:\\Users\\marte\\Desktop\\Phone\\PhoneApp\\PhoneApp.csproj",
+        "projectPath": "C:\\Users\\marte\\source\\repos\\m2rtenm\\Phone\\PhoneApp\\PhoneApp.csproj",
         "packagesPath": "C:\\Users\\marte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marte\\Desktop\\Phone\\PhoneApp\\obj\\",
+        "outputPath": "C:\\Users\\marte\\source\\repos\\m2rtenm\\Phone\\PhoneApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -25,10 +25,12 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -40,6 +42,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "EPPlus": {
               "target": "Package",
@@ -72,6 +75,18 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.3, )"
+            },
+            "SQLite": {
+              "target": "Package",
+              "version": "[3.13.0, )"
+            },
+            "System.Data.SQLite": {
+              "target": "Package",
+              "version": "[1.0.118, )"
+            },
+            "System.Data.SQLite.Core": {
+              "target": "Package",
+              "version": "[1.0.118, )"
             }
           },
           "imports": [
@@ -80,7 +95,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -92,7 +108,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

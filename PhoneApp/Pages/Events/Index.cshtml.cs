@@ -99,7 +99,7 @@ namespace PhoneApp.Pages.Events
 
             stream.Position = 0;
 
-            string excelName = $"$all_records_{DateTime.Now.ToString("yyyyMMdd")}.csv";
+            string excelName = $"all_records_{DateTime.Now.ToString("yyyyMMddHHmmss")}.csv";
 
             return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", excelName);
         }

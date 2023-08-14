@@ -25,7 +25,6 @@ namespace PhoneApp
                 try
                 {
                     var context = services.GetRequiredService<PhoneContext>();
-                    //context.Database.EnsureCreated();
                     DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)

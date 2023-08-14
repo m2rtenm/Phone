@@ -11,9 +11,7 @@ namespace PhoneApp.Data
         }
 
         public DbSet<Call> Calls { get; set; }
-
         public DbSet<EventType> EventTypes { get; set; }
-
         public DbSet<Event> Events { get; set; }
     }
 }
