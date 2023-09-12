@@ -57,67 +57,143 @@ namespace PhoneApp.Data
             context.Calls.AddRange(calls);
             context.SaveChanges();
 
+            var dateinstance = new RandomDateTime();
+            DateTime d1 = dateinstance.Next();
+            DateTime d2 = dateinstance.Next();
+            DateTime d3 = dateinstance.Next();
+            DateTime d4 = dateinstance.Next();
+            DateTime d5 = dateinstance.Next();
+            DateTime d6 = dateinstance.Next();
+            DateTime d7 = dateinstance.Next();
+            DateTime d8 = dateinstance.Next();
+            DateTime d9 = dateinstance.Next();
+            DateTime d10 = dateinstance.Next();
+            DateTime d11 = dateinstance.Next();
+            DateTime d12 = dateinstance.Next();
+            DateTime d13 = dateinstance.Next();
+            DateTime d14 = dateinstance.Next();
+            DateTime d15 = dateinstance.Next();
+            DateTime d16 = dateinstance.Next();
+            DateTime d17 = dateinstance.Next();
+            DateTime d18 = dateinstance.Next();
+            DateTime d19 = dateinstance.Next();
+            DateTime d20 = dateinstance.Next();
+
             var events = new[]
             {
-                new Event
-                {
-                    EventID = 1, EventTypeID = "Event_pick_up", RecordDate = DateTime.Now.AddSeconds(-180),
-                    CallID = 5
-                },
-                new Event
-                {
-                    EventID = 2, EventTypeID = "Event_hang_up", RecordDate = DateTime.Now.AddSeconds(-175),
-                    CallID = 5
-                },
-                new Event
-                {
-                    EventID = 3, EventTypeID = "Event_pick_up", RecordDate = DateTime.Now.AddSeconds(-170),
-                    CallID = 1
-                },
-                new Event
-                {
-                    EventID = 4, EventTypeID = "Event_dial", RecordDate = DateTime.Now.AddSeconds(-170),
-                    CallID = 1
-                },
-                new Event
-                {
-                    EventID = 5, EventTypeID = "Event_call_end", RecordDate = DateTime.Now.AddSeconds(-170),
-                    CallID = 1
-                },
-                new Event
-                {
-                    EventID = 6, EventTypeID = "Event_hang_up", RecordDate = DateTime.Now.AddSeconds(-170),
-                    CallID = 1
-                },
-                new Event
-                {
-                    EventID = 7, EventTypeID = "Event_pick_up", RecordDate = DateTime.Now.AddSeconds(-170),
-                    CallID = 2
-                },
-                new Event
-                {
-                    EventID = 8, EventTypeID = "Event_dial", RecordDate = DateTime.Now.AddSeconds(-170), 
-                    CallID = 2
-                },
-                new Event
-                {
-                    EventID = 9, EventTypeID = "Event_call_established", RecordDate = DateTime.Now.AddSeconds(-170), 
-                    CallID = 2
-                },
-                new Event
-                {
-                    EventID = 10, EventTypeID = "Event_call_end", RecordDate = DateTime.Now.AddSeconds(-170),
-                    CallID = 2
-                },
-                new Event
-                {
-                    EventID = 11, EventTypeID = "Event_hang_up", RecordDate = DateTime.Now.AddSeconds(-170),
-                    CallID = 2
-                },
-                new Event { EventID = 12, EventTypeID = "Event_pick_up", RecordDate = DateTime.Now.AddSeconds(-90), 
-                    CallID = 3},
-                new Event {EventID =  13, EventTypeID = "Event_dial", RecordDate = DateTime.Now.AddSeconds(-5),
-                    CallID = 3}
+                new Event {EventTypeID = "Event_pick_up", RecordDate = d1, CallID = 5},
+                new Event {EventTypeID = "Event_hang_up", RecordDate = d1.AddSeconds(5), CallID = 5},
+
+                new Event {EventTypeID = "Event_pick_up", RecordDate = d2, CallID = 1},
+                new Event {EventTypeID = "Event_dial", RecordDate = d2.AddSeconds(5), CallID = 1},
+                new Event {EventTypeID = "Event_call_end", RecordDate = d2.AddSeconds(15), CallID = 1},
+                new Event {EventTypeID = "Event_hang_up", RecordDate = d2.AddSeconds(20), CallID = 1},
+                
+                new Event {EventTypeID = "Event_pick_up", RecordDate = d3, CallID = 2},
+                new Event {EventTypeID = "Event_dial", RecordDate = d3.AddSeconds(3), CallID = 2},
+                new Event {EventTypeID = "Event_call_established", RecordDate = d3.AddSeconds(13), CallID = 2},
+                new Event {EventTypeID = "Event_call_end", RecordDate = d3.AddSeconds(75), CallID = 2},
+                new Event {EventTypeID = "Event_hang_up", RecordDate = d3.AddSeconds(78), CallID = 2},
+
+                new Event {EventTypeID = "Event_pick_up", RecordDate = d4, CallID = 3},
+                new Event {EventTypeID = "Event_dial", RecordDate = d4.AddSeconds(5), CallID = 3},
+                new Event {EventTypeID = "Event_call_end", RecordDate = d4.AddSeconds(12), CallID = 3},
+                new Event {EventTypeID = "Event_hang_up", RecordDate = d4.AddSeconds(15), CallID = 3},
+
+                new Event {EventTypeID = "Event_pick_up", RecordDate = d5, CallID = 4},
+                new Event {EventTypeID = "Event_dial", RecordDate = d5.AddSeconds(3), CallID = 4},
+                new Event {EventTypeID = "Event_call_end", RecordDate = d5.AddSeconds(15), CallID = 4},
+                new Event {EventTypeID = "Event_hang_up", RecordDate = d5.AddSeconds(17), CallID = 4},
+
+                new Event {EventTypeID = "Event_pick_up", RecordDate = d6, CallID = 6},
+                new Event {EventTypeID = "Event_dial", RecordDate = d6.AddSeconds(2), CallID = 6},
+                new Event {EventTypeID = "Event_call_established", RecordDate = d6.AddSeconds(22), CallID = 6},
+                new Event {EventTypeID = "Event_call_end", RecordDate = d6.AddSeconds(57), CallID = 6},
+                new Event {EventTypeID = "Event_hang_up", RecordDate = d6.AddSeconds(61), CallID = 6},
+
+                new Event {EventTypeID = "Event_pick_up", RecordDate = d7, CallID = 7},
+                new Event {EventTypeID = "Event_dial", RecordDate = d7.AddSeconds(3), CallID = 7},
+                new Event {EventTypeID = "Event_call_established", RecordDate = d7.AddSeconds(25), CallID = 7},
+                new Event {EventTypeID = "Event_call_end", RecordDate = d7.AddSeconds(87), CallID = 7},
+                new Event {EventTypeID = "Event_hang_up", RecordDate = d7.AddSeconds(90), CallID = 7},
+
+                new Event {EventTypeID = "Event_pick_up", RecordDate = d8, CallID = 8},
+                new Event {EventTypeID = "Event_dial", RecordDate = d8.AddSeconds(4), CallID = 8},
+                new Event {EventTypeID = "Event_call_established", RecordDate = d8.AddSeconds(35), CallID = 8},
+                new Event {EventTypeID = "Event_call_end", RecordDate = d8.AddSeconds(59), CallID = 8},
+                new Event {EventTypeID = "Event_hang_up", RecordDate = d8.AddSeconds(65), CallID = 8},
+
+                new Event {EventTypeID = "Event_pick_up", RecordDate = d9, CallID = 10},
+                new Event {EventTypeID = "Event_dial", RecordDate = d9.AddSeconds(3), CallID = 10},
+                new Event {EventTypeID = "Event_call_established", RecordDate = d9.AddSeconds(40), CallID = 10},
+                new Event {EventTypeID = "Event_call_end", RecordDate = d9.AddSeconds(128), CallID = 10},
+                new Event {EventTypeID = "Event_hang_up", RecordDate = d9.AddSeconds(131), CallID = 10},
+
+                new Event {EventTypeID = "Event_pick_up", RecordDate = d10, CallID = 9},
+                new Event {EventTypeID = "Event_dial", RecordDate = d10.AddSeconds(7), CallID = 9},
+                new Event {EventTypeID = "Event_call_established",RecordDate = d10.AddSeconds(35), CallID = 9},
+                new Event {EventTypeID = "Event_call_end", RecordDate = d10.AddSeconds(187), CallID = 9},
+                new Event {EventTypeID = "Event_hang_up", RecordDate = d10.AddSeconds(193), CallID = 9},
+
+                new Event {EventTypeID = "Event_pick_up", RecordDate = d11, CallID = 18},
+                new Event {EventTypeID = "Event_dial", RecordDate = d11.AddSeconds(4), CallID = 18},
+                new Event {EventTypeID = "Event_call_established", RecordDate = d11.AddSeconds(16), CallID = 18},
+                new Event {EventTypeID = "Event_call_end", RecordDate = d11.AddSeconds(259), CallID = 18},
+                new Event {EventTypeID = "Event_hang_up", RecordDate = d11.AddSeconds(265), CallID = 18},
+
+                new Event {EventTypeID = "Event_pick_up", RecordDate = d12, CallID = 19},
+                new Event {EventTypeID = "Event_dial", RecordDate = d12.AddSeconds(9), CallID = 19},
+                new Event {EventTypeID = "Event_call_established", RecordDate = d12.AddSeconds(43), CallID = 19},
+                new Event {EventTypeID = "Event_call_end", RecordDate = d12.AddSeconds(94), CallID = 19},
+                new Event {EventTypeID = "Event_hang_up", RecordDate = d12.AddSeconds(100), CallID = 19},
+
+                new Event {EventTypeID = "Event_pick_up", RecordDate = d13, CallID = 20},
+                new Event {EventTypeID = "Event_dial", RecordDate = d13.AddSeconds(6), CallID = 20},
+                new Event {EventTypeID = "Event_call_established", RecordDate = d13.AddSeconds(45), CallID = 20},
+                new Event {EventTypeID = "Event_call_end", RecordDate = d13.AddSeconds(432), CallID = 20},
+                new Event {EventTypeID = "Event_hang_up", RecordDate = d13.AddSeconds(439), CallID = 20},
+
+                new Event {EventTypeID = "Event_pick_up", RecordDate = d14, CallID = 11},
+                new Event {EventTypeID = "Event_dial", RecordDate = d14.AddSeconds(8), CallID = 11},
+                new Event {EventTypeID = "Event_call_established", RecordDate = d14.AddSeconds(25), CallID = 11},
+                new Event {EventTypeID = "Event_call_end", RecordDate = d14.AddSeconds(56), CallID = 11},
+                new Event {EventTypeID = "Event_hang_up", RecordDate = d14.AddSeconds(61), CallID = 11},
+
+                new Event {EventTypeID = "Event_pick_up", RecordDate = d15, CallID = 12},
+                new Event {EventTypeID = "Event_dial", RecordDate = d15.AddSeconds(12), CallID = 12},
+                new Event {EventTypeID = "Event_call_established", RecordDate = d15.AddSeconds(58), CallID = 12},
+                new Event {EventTypeID = "Event_call_end", RecordDate = d15.AddSeconds(368), CallID = 12},
+                new Event {EventTypeID = "Event_hang_up", RecordDate = d15.AddSeconds(375), CallID = 12},
+
+                new Event {EventTypeID = "Event_pick_up", RecordDate = d16, CallID = 13},
+                new Event {EventTypeID = "Event_dial", RecordDate = d16.AddSeconds(5), CallID = 13},
+                new Event {EventTypeID = "Event_call_established", RecordDate = d16.AddSeconds(29), CallID = 13},
+                new Event {EventTypeID = "Event_call_end", RecordDate = d16.AddSeconds(257), CallID = 13},
+                new Event {EventTypeID = "Event_hang_up", RecordDate = d16.AddSeconds(264), CallID = 13},
+
+                new Event {EventTypeID = "Event_pick_up", RecordDate = d17, CallID = 14},
+                new Event {EventTypeID = "Event_dial", RecordDate = d17.AddSeconds(9), CallID = 14},
+                new Event {EventTypeID = "Event_call_established", RecordDate = d17.AddSeconds(45), CallID = 14},
+                new Event {EventTypeID = "Event_call_end", RecordDate = d17.AddSeconds(227), CallID = 14},
+                new Event {EventTypeID = "Event_hang_up", RecordDate = d17.AddSeconds(231), CallID = 14},
+
+                new Event {EventTypeID = "Event_pick_up", RecordDate = d18, CallID = 15},
+                new Event {EventTypeID = "Event_dial", RecordDate = d18.AddSeconds(7), CallID = 15},
+                new Event {EventTypeID = "Event_call_established", RecordDate = d18.AddSeconds(34), CallID = 15},
+                new Event {EventTypeID = "Event_call_end", RecordDate = d18.AddSeconds(125), CallID = 15},
+                new Event {EventTypeID = "Event_hang_up", RecordDate = d18.AddSeconds(127), CallID = 15},
+
+                new Event {EventTypeID = "Event_pick_up", RecordDate = d19, CallID = 16},
+                new Event {EventTypeID = "Event_dial", RecordDate = d19.AddSeconds(4), CallID = 16},
+                new Event {EventTypeID = "Event_call_established", RecordDate = d19.AddSeconds(20), CallID = 16},
+                new Event {EventTypeID = "Event_call_end", RecordDate = d19.AddSeconds(153), CallID = 16},
+                new Event {EventTypeID = "Event_hang_up", RecordDate = d19.AddSeconds(159), CallID = 16},
+
+                new Event {EventTypeID = "Event_pick_up", RecordDate = d20, CallID = 17},
+                new Event {EventTypeID = "Event_dial", RecordDate = d20.AddSeconds(9), CallID = 17},
+                new Event {EventTypeID = "Event_call_established", RecordDate = d20.AddSeconds(23), CallID = 17},
+                new Event {EventTypeID = "Event_call_end", RecordDate = d20.AddSeconds(570), CallID = 17},
+                new Event {EventTypeID = "Event_hang_up", RecordDate = d20.AddSeconds(575), CallID = 17},
 
             };
 

@@ -29,7 +29,6 @@ namespace PhoneApp.Pages.Calls
 
             IQueryable<Call> callIQ = from c in _context.Calls.Include(e => e.Events).ThenInclude(c => c.EventType) where c.CallID == id select c;
 
-            //Call = await _context.Calls.FirstOrDefaultAsync(m => m.CallID == id);
             Call = await callIQ.FirstOrDefaultAsync(m => m.CallID == id);
 
             if (Call == null)
